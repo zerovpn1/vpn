@@ -130,7 +130,7 @@ about
 23)
 bbr
 ;;
-28)
+24)
 autoreboot
 ;;
 x)
