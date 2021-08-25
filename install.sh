@@ -10,7 +10,6 @@ wget -q -O ssssr "https://raw.githubusercontent.com/zerovpn1/vpn/main/ssssr.sh"
 wget -q -O v2raay "https://raw.githubusercontent.com/zerovpn1/vpn/main/v2raay.sh"
 wget -q -O vleess "https://raw.githubusercontent.com/zerovpn1/vpn/main/vleess.sh"
 wget -q -O trojaan "https://raw.githubusercontent.com/zerovpn1/vpn/main/trojaan.sh"
-wget -q -O trojangoo "https://raw.githubusercontent.com/zerovpn1/vpn/main/trojangoo.sh"
 chmod +x menu && sed -i -e 's/\r$//' menu
 chmod +x ssh &&  sed -i -e 's/\r$//' ssh
 chmod +x wgr && sed -i -e 's/\r$//' wgr
@@ -20,4 +19,3 @@ chmod +x ssssr && sed -i -e 's/\r$//' ssssr
 chmod +x v2raay &&  sed -i -e 's/\r$//' v2raay
 chmod +x vleess &&  sed -i -e 's/\r$//' vleess
 chmod +x trojaan &&  sed -i -e 's/\r$//' trojaan
-chmod +x trojaangoo &&  sed -i -e 's/\r$//' trojaangoo
