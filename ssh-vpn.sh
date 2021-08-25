@@ -195,6 +195,10 @@ connect = 127.0.0.1:22
 accept = 442
 connect = 127.0.0.1:1194
 
+[ws-stunnel]
+accept = 443
+connect = 127.0.0.1:700
+
 END
 
 # make a certificate
