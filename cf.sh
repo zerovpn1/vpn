@@ -13,7 +13,7 @@ echo "Only For Premium Users"
 exit 0
 fi
 apt install jq curl -y
-DOMAIN=domain kalian
+DOMAIN=zero-vpn-stores.tech
 sub=$(</dev/urandom tr -dc a-z0-9 | head -c4)
 SUB_DOMAIN=${sub}.zero-vpn-stores.tech
 CF_ID=is650072@gmail.com
