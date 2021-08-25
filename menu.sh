@@ -35,25 +35,24 @@ echo -e   "   5\e[1;33m)\e[m Panel SSR & SS Account"
 echo -e   "   6\e[1;33m)\e[m Panel V2Ray"
 echo -e   "   7\e[1;33m)\e[m Panel VLess"
 echo -e   "   8\e[1;33m)\e[m Panel Trojan"
-echo -e   "   9\e[1;33m)\e[m Panel TrojanGO"
 echo -e   "  \e[1;32m------------------------------------------------------------\e[m" | lolcat
 echo -e   "                             SYSTEM MENU\e[m" | lolcat 
 echo -e   "  \e[1;32m------------------------------------------------------------\e[m" | lolcat
-echo -e   "   10\e[1;33m)\e[m  Add Subdomain Host For VPS"
-echo -e   "   11\e[1;33m)\e[m  Renew Certificate V2RAY"
-echo -e   "   12\e[1;33m)\e[m  Change Port All Account"
-echo -e   "   13\e[1;33m)\e[m  Autobackup Data VPS"
-echo -e   "   14\e[1;33m)\e[m  Backup Data VPS"
-echo -e   "   15\e[1;33m)\e[m  Restore Data VPS"
-echo -e   "   16\e[1;33m)\e[m  Webmin Menu"
-echo -e   "   17\e[1;33m)\e[m  Limit Bandwith Speed Server"
-echo -e   "   18\e[1;33m)\e[m  Check Usage of VPS Ram" 
-echo -e   "   19\e[1;33m)\e[m  Reboot VPS"
-echo -e   "   20\e[1;33m)\e[m  Speedtest VPS"
-echo -e   "   21\e[1;33m)\e[m  Information Display System" 
-echo -e   "   22\e[1;33m)\e[m  Info Script Auto Install"
-echo -e   "   23\e[1;33m)\e[m  Install BBR"
-echo -e   "   24\e[1;33m)\e[m  Auto Reboot"
+echo -e   "   9\e[1;33m)\e[m  Add Subdomain Host For VPS"
+echo -e   "   10\e[1;33m)\e[m  Renew Certificate V2RAY"
+echo -e   "   11\e[1;33m)\e[m  Change Port All Account"
+echo -e   "   12\e[1;33m)\e[m  Autobackup Data VPS"
+echo -e   "   13\e[1;33m)\e[m  Backup Data VPS"
+echo -e   "   14\e[1;33m)\e[m  Restore Data VPS"
+echo -e   "   15\e[1;33m)\e[m  Webmin Menu"
+echo -e   "   16\e[1;33m)\e[m  Limit Bandwith Speed Server"
+echo -e   "   17\e[1;33m)\e[m  Check Usage of VPS Ram" 
+echo -e   "   18\e[1;33m)\e[m  Reboot VPS"
+echo -e   "   19\e[1;33m)\e[m  Speedtest VPS"
+echo -e   "   20\e[1;33m)\e[m  Information Display System" 
+echo -e   "   21\e[1;33m)\e[m  Info Script Auto Install"
+echo -e   "   22\e[1;33m)\e[m  Install BBR"
+echo -e   "   23\e[1;33m)\e[m  Auto Reboot"
 echo -e   "  \e[1;32m------------------------------------------------------------\e[m" | lolcat
 echo -e   "   x)   Exit" | lolcat
 echo -e   "  \e[1;32m------------------------------------------------------------\e[m" | lolcat
@@ -86,51 +85,48 @@ vleess
 trojaan
 ;;
 9)
-trojangoo
-;;
-10)
 add-host
 ;;
-11)
+10)
 certv2ray
 ;;
-12)
+11)
 change-port
 ;;
-13)
+12)
 autobackup
 ;;
-14)
+13)
 backup
 ;;
-15)
+14)
 restore
 ;;
-16)
+15)
 wbmn
 ;;
-17)
+16)
 limit-speed
 ;;
-18)
+17)
 ram
 ;;
-19)
+18)
 reboot
 ;;
-20)
+19)
 speedtest
 ;;
-21)
+20)
 info
 ;;
-22)
+21)
 about
 ;;
-23)
+22)
 bbr
 ;;
-24)
+23)
 autoreboot
 ;;
 x)
