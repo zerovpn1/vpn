@@ -1,6 +1,6 @@
 #!/bin/bash
 clear
-cat /usr/bin/zero | lolcat
+cat /usr/bin/bannerku | lolcat
 echo -e "\e[32m════════════════════════════════════════\e[m" | lolcat
 echo -e "             ═══[Trojan]═══"
 echo -e "\e[32m════════════════════════════════════════\e[m" | lolcat
