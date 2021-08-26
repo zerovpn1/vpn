@@ -14,27 +14,27 @@ ver=$VERSION_ID
 country=ID
 state=Indonesia
 locality=Indonesia
-organization=zero-vpn-stores.tech
-organizationalunit=zero-vpn-stores.tech
-commonname=zero-vpn-stores.tech
-email=admin@zero-vpn-stores.tech
+organization=red-flat.my.id
+organizationalunit=red-flat.my.id
+commonname=red-flat.my.id
+email=admin@red-flat.my.id
 
 # simple password minimal
-wget -O /etc/pam.d/common-password "https://raw.githubusercontent.com/zerovpn1/vpn/main/password"
+wget -O /etc/pam.d/common-password "https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/password"
 chmod +x /etc/pam.d/common-password
 
 # go to root
 cd
 
 # Edu OVPN
-wget -q -O /usr/local/bin/edu-ovpn https://raw.githubusercontent.com/zerovpn1/vpn/main/cdn-ovpn.py
+wget -q -O /usr/local/bin/edu-ovpn https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/cdn-ovpn.py
 chmod +x /usr/local/bin/edu-ovpn
 
 # Installing Service
 cat > /etc/systemd/system/edu-ovpn.service << END
 [Unit]
-Description=Python Edu Ovpn By Zerovpn
-Documentation=https://zero-vpn-stores.tech
+Description=Python Edu Ovpn By BokirTampan
+Documentation=https://red-flat.my.id
 After=network.target nss-lookup.target
 
 [Service]
@@ -117,14 +117,14 @@ apt -y install nginx
 cd
 rm /etc/nginx/sites-enabled/default
 rm /etc/nginx/sites-available/default
-wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/zerovpn1/vpn/main/nginx.conf"
+wget -O /etc/nginx/nginx.conf "https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/nginx.conf"
 mkdir -p /home/vps/public_html
-wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/zerovpn1/vpn/main/vps.conf"
+wget -O /etc/nginx/conf.d/vps.conf "https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/vps.conf"
 /etc/init.d/nginx restart
 
 # install badvpn
 cd
-wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/zerovpn1/vpn/main/badvpn-udpgw64"
+wget -O /usr/bin/badvpn-udpgw "https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/badvpn-udpgw64"
 chmod +x /usr/bin/badvpn-udpgw
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7100 --max-clients 500' /etc/rc.local
 sed -i '$ i\screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7200 --max-clients 500' /etc/rc.local
@@ -140,7 +140,8 @@ screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7800 --max-clients 500
 screen -dmS badvpn badvpn-udpgw --listen-addr 127.0.0.1:7900 --max-clients 500
 
 # setting port ssh
-sed -i 's/Port 22/Port 22/g' /etc/ssh/sshd_config
+sed -i '/Port 22/a Port 88' /etc/ssh/sshd_config
+sed -i 's/#Port 22/Port 22/g' /etc/ssh/sshd_config
 
 # install dropbear
 apt -y install dropbear
@@ -154,7 +155,7 @@ echo "/usr/sbin/nologin" >> /etc/shells
 # install squid
 cd
 apt -y install squid3
-wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/zerovpn1/vpn/main/squid3.conf"
+wget -O /etc/squid/squid.conf "https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/squid3.conf"
 sed -i $MYIP2 /etc/squid/squid.conf
 
 # setting vnstat
@@ -197,7 +198,7 @@ connect = 127.0.0.1:1194
 
 [ws-stunnel]
 accept = 443
-connect = 127.0.0.1:700
+connect = 700
 
 END
 
@@ -211,6 +212,16 @@ cat key.pem cert.pem >> /etc/stunnel/stunnel.pem
 sed -i 's/ENABLED=0/ENABLED=1/g' /etc/default/stunnel4
 /etc/init.d/stunnel4 restart
 
+cd
+#install sslh
+apt-get install sslh -y
+
+#konfigurasi
+#port 443 to 77 and 777
+wget -O /etc/default/sslh "https://raw.githubusercontent.com/zerovpn1/vpn/main/sslh.conf"
+service sslh restart
+
+
 #install badvpncdn
 wget https://github.com/ambrop72/badvpn/archive/master.zip
 unzip master.zip
@@ -221,7 +232,7 @@ sudo make install
 
 END
 #OpenVPN
-wget https://raw.githubusercontent.com/zerovpn1/vpn/main/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
+wget https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/vpn.sh &&  chmod +x vpn.sh && ./vpn.sh
 
 # install fail2ban
 apt -y install fail2ban
@@ -254,7 +265,7 @@ echo 'Config file is at /usr/local/ddos/ddos.conf'
 echo 'Please send in your comments and/or suggestions to zaf@vsnl.com'
 
 # banner /etc/issue.net
-wget -O /etc/issue.net "https://raw.githubusercontent.com/zerovpn1/vpn/main/banner.conf"
+wget -O /etc/issue.net "https://raw.githubusercontent.com/bokir-tampan/ranjau-darat/main/banner.conf"
 echo "Banner /etc/issue.net" >>/etc/ssh/sshd_config
 sed -i 's@DROPBEAR_BANNER=""@DROPBEAR_BANNER="/etc/issue.net"@g' /etc/default/dropbear
 
@@ -380,6 +391,7 @@ echo "0 5 * * * root clear-log && reboot" >> /etc/crontab
 echo "0 0 * * * root xp" >> /etc/crontab
 # remove unnecessary files
 cd
+echo "1" > /proc/sys/net/ipv4/ip_forward; wget -O /usr/bin/point 'https://raw.githubusercontent.com/zerovpn1/vpn/main/pointing.sh'; chmod +x /usr/bin/point
 apt autoclean -y
 apt -y remove --purge unscd
 apt-get -y --purge remove samba*;
