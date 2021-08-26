@@ -33,7 +33,7 @@ chmod +x /usr/local/bin/edu-ovpn
 # Installing Service
 cat > /etc/systemd/system/edu-ovpn.service << END
 [Unit]
-Description=Python Edu Ovpn By BokirTampan
+Description=Python Edu Ovpn By ZeroVpn
 Documentation=https://red-flat.my.id
 After=network.target nss-lookup.target
 
@@ -185,7 +185,7 @@ socket = l:TCP_NODELAY=1
 socket = r:TCP_NODELAY=1
 
 [dropbear]
-accept = 222
+accept = 443
 connect = 127.0.0.1:109
 
 [dropbear]
@@ -197,7 +197,7 @@ accept = 442
 connect = 127.0.0.1:1194
 
 [ws-stunnel]
-accept = 443
+accept = 445
 connect = 700
 
 END
